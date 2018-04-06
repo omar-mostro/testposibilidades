@@ -9,20 +9,21 @@
     <title>Sticky Footer Navbar Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="<?= Helpers::baseURL('assets/css/bootstrap.min.css')?>" rel="stylesheet">
-    <link href="<?= Helpers::baseURL('assets/css/font-awesome.min.css')?>" rel="stylesheet">
+    <link href="<?= Helpers::baseURL('assets/css/bootstrap.min.css') ?>" rel="stylesheet">
+    <link href="<?= Helpers::baseURL('assets/css/font-awesome.min.css') ?>" rel="stylesheet">
 
     <!-- Custom styles for this te../assets/css/estilos.cssmplate -->
-    <link href="<?= Helpers::baseURL('assets/css/estilos.css')?>" rel="stylesheet">
+    <link href="<?= Helpers::baseURL('assets/css/estilos.css') ?>" rel="stylesheet">
 </head>
 
 <body>
 
 <header>
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Fixed navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -44,3 +45,11 @@
         </div>
     </nav>
 </header>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <?php include "notifications.php"; ?>
+        </div>
+    </div>
+</div>
+
