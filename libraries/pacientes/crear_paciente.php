@@ -1,7 +1,7 @@
 <?php
 include "../DataBase.php";
 include "../Helpers.php";
-
+session_start();
 $db = new DataBase();
 
 
@@ -15,6 +15,7 @@ $query = "INSERT INTO pacientes (nombre, edad, genero, clave)
 
 try {
     DataBase::guardar($query);
+    $_SESSION['success'] = 'Exito al crear el usuario';
     header('Location: '.Helpers::baseURL('vistas/pacientes'));
 } catch (Exception $e) {
 
