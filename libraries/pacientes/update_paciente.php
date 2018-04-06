@@ -1,6 +1,7 @@
 <?php
 include "../DataBase.php";
 include "../Helpers.php";
+session_start();
 
 $db = new DataBase();
 
@@ -21,6 +22,7 @@ where id = $id";
 
 try {
     DataBase::guardar($query);
+    $_SESSION['success'] = 'Exito al actualizar los datos';
     header('Location: '.Helpers::baseURL("vistas/pacientes/update.php?id=$id"));
 } catch (Exception $e) {
 
