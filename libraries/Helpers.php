@@ -5,6 +5,10 @@ class Helpers
 
 {
 
+    const PACIENTE_MASCULINO = 'masculino';
+    const PACIENTE_FEMENINO = 'femenino';
+
+
     public static $test;
     public static function baseURL($additionalPath)
     {
