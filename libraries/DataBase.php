@@ -106,32 +106,20 @@ class DataBase
      * @return int
      * @throws Exception
      */
-    public function delete($query)
+    public
+    function delete($query)
     {
         $this->link->query($query);
 
         //Validate delete
         //Cuando no se realizo ningun delete porque no coincidieron los parametros where del delete
         if ($this->link->affected_rows == 0) {
-            throw new Exception("Error: {$this->link->error} " .__FILE__ ." ". __LINE__);
+            throw new Exception("Error: {$this->link->error} " .__FILE__ ." ". __LINE__, 1);
         } //cuando la consulta retorna un error
         elseif ($this->link->affected_rows == -1) {
             //return $this->link->affected_rows;
-            throw new Exception("Error: {$this->link->error} " .__FILE__ ." ". __LINE__);
-
+            return $this->link->errno;
         }
-
-        return $this->link->affected_rows;
-    }
-
-    /**
-     * @param $query
-     * @throws Exception
-     */
-    public static function eliminar($query)
-    {
-        $db = new DataBase();
-        $db->delete($query);
     }
 
 }
